@@ -1,0 +1,31 @@
+.card-container{
+  display: flex;
+  position: absolute;
+  width:50%;
+  height: 40%;
+  top: 35%;
+  left: 45%;
+  transform: translate(-20%, -20%);
+  z-index: 7;
+  
+}
+.card{
+  border-radius: 20px;
+  width: 85%;
+  height: 180%;
+  box-shadow: rgb(0 0 0 / 15%) 0px 10px 69px, rgb(0 0 0 / 15%) 0px 2px 5px;
+  border: .5px solid #fff;
+  background-color: white;
+}
+.card-content{
+  display: flex;
+  padding: 0 6em 0 1em;
+  justify-content: space-evenly;
+}
+.title{
+  color:#585858;
+}
+.card-title{
+  padding: 3em 1em;
+  color: #686868;
+}
