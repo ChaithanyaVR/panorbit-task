@@ -1,17 +1,25 @@
-.loginpage-container{
-    position: absolute;
+.loginpage-section{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 .wave {
-    position: relative;
-    height: 1px;
-    z-index: 2;
+    position: absolute;
+    left:-5px;
+    top:-35px;
+    z-index: -9;
+
 }
 
-.wave1 {
-    top: 12px;
-    position: relative;
-    height:100%;
-    width: 100%;
+.wave-outline {
+    top: -20px;
+    left: -8px;
+    position: absolute;
+    z-index: -99;
+    
 }
 
 

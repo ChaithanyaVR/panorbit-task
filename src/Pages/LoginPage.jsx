@@ -17,7 +17,7 @@ width="491.419mm" height="150.636mm">
 <defs>
 <linearGradient id="PSgrad_0" x1="0%" y1="57%" x2="81%" y2="0%">
 <stop offset="0%" stop-color="#702CC8" stop-opacity="1" />
-<stop offset="50%" stop-color="#325FC8" stop-opacity="1" />
+<stop offset="100%" stop-color="#325FC8" stop-opacity="1" />
 </linearGradient>
 
 </defs>
@@ -30,7 +30,7 @@ d="M0.575,242.478 C0.575,242.478 33.784,381.753 294.399,311.613 C555.14,241.472 
 </svg>
 </div>
 
-<div className='wave1'>
+<div className='wave-outline'>
 <svg 
 xmlns="http://www.w3.org/2000/svg"
 xmlnsxlink="http://www.w3.org/1999/xlink"
