@@ -2,25 +2,15 @@ import React from 'react'
 import './LoginBox.css'
 import UserBadge from './UserBadge'
 import SampleDP from '../images/download.jpeg'
-import axios from 'axios'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import {useContext} from 'react'
+import {UsersContext} from '../../App'
 
 
 function LoginBox()  {
-  const [UsersAccount ,setUsersAccount]=useState([])
-
-  useEffect(() => {
-    axios.get('https://panorbit.in/api/users.json')
-    .then(res => {
-      console.log('Fetched Data')
-      setUsersAccount(res.data.users)
-      console.log(UsersAccount)
-    })
-    .catch(err =>{
-      console.log(err)
-    })
-  },[])
+  
+  
+  const Users = useContext(UsersContext)
+  console.log(Users)
   return (
     <>
     
@@ -29,7 +19,7 @@ function LoginBox()  {
           <h3 className='title'>Select an account</h3>
         </div>
           <div className="users-container">
-          {UsersAccount.map(accounts =>(
+          {Users.map(accounts =>(
             <UserBadge key={accounts.id}image={SampleDP} name={accounts.name}/> 
           ))}
           

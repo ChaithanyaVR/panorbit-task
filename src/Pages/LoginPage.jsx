@@ -4,8 +4,6 @@ import './LoginPage.css'
 
 function LoginPage() {
 return (
-
-
   <>
       <section className="loginpage-section">
      
