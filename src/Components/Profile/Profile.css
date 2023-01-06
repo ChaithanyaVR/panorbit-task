@@ -1,0 +1,29 @@
+.profile-main-container {
+    margin-left: 20%;
+}
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+.profile-info-box,.profile-company-details-box,.profile-address-details {
+    text-align: left;
+}
+.profile-info-box h3 span,.profile-company-details-box h3 span{
+    display: inline-block;
+    color: #AAAAAA;
+    width: 137px;
+    font-weight: 200;
+    /* background: aqua; */
+    text-align: right;
+}
+
+.company-heading,.profile-address-details h3 span {
+    color: #AAAAAA; 
+    font-weight: 200;
+}
+
+
+

@@ -1,0 +1,23 @@
+.logged-user-badge{
+    display: flex;
+    padding: 0.5em;
+    align-items: center;
+    /* border-bottom: 1px solid #E1E1E1; */
+    color:black;
+}
+
+.logged-person-image{
+    width: 2em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.logged-person-image img{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.logged-person-name{
+    padding: 0 0.8em;
+}

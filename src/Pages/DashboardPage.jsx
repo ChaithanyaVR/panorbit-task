@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useContext } from 'react'
 import Profile from '../Components/Profile/Profile'
 import { UsersContext } from '../GlobleContext'
-
+import './DashboardPage.css'
 
 function DashboardPage() {
 
@@ -18,9 +18,9 @@ function DashboardPage() {
   return (
 
     <>
-      dashboard:
-     
-      <Profile/>
+      <div className="dashboard-main-container">
+        <Profile/>
+      </div>
     </>
   )
 }
