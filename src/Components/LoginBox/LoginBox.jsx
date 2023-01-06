@@ -3,14 +3,25 @@ import './LoginBox.css'
 import UserBadge from './UserBadge'
 import SampleDP from '../images/download.jpeg'
 import {useContext} from 'react'
-import {UsersContext} from '../../App'
+import {UsersContext} from '../../GlobleContext'
+import { useState } from 'react'
+import { useEffect } from 'react'
+
 
 
 function LoginBox()  {
   
+  const [users,setUsers] = useState([ ])
+  const {usersData}= useContext(UsersContext)
+
+  //To update the state once received from UsersContext
+  useEffect(()=>{
+    setUsers(usersData)
+  },[usersData])
+ 
   
-  const Users = useContext(UsersContext)
-  console.log(Users)
+  console.log('Login Box:')
+  console.log(users)
   return (
     <>
     
@@ -19,8 +30,8 @@ function LoginBox()  {
           <h3 className='title'>Select an account</h3>
         </div>
           <div className="users-container">
-          {Users.map(accounts =>(
-            <UserBadge key={accounts.id}image={SampleDP} name={accounts.name}/> 
+          {users.map(accounts =>(
+            <UserBadge key={accounts.id} image={SampleDP} name={accounts.name} id={accounts.id} /> 
           ))}
           
           

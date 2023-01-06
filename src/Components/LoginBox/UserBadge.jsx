@@ -1,10 +1,25 @@
 import React from 'react'
 import './UserBadge.css'
+import {useContext} from 'react'
+import {UsersContext} from '../../GlobleContext'
 
-function UserBadge({image,name}) {
+
+function UserBadge({image,name,id}) {
+
+  // const {setLoggedInUser, loggedInUser} = useContext(UsersContext)
+ 
+  console.log('UserBadge')
+
+
+  const setUser = ()=> {
+   
+    console.log('Setting User...')
+
+
+  }
   return (
     <>
-       <div className='user-badge'>
+       <div className='user-badge' id={id} onClick={setUser} >
           <div className='person-image'>
             <img src={image} alt="person1img" />
           </div>
