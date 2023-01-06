@@ -6,6 +6,8 @@ import {useContext} from 'react'
 import {UsersContext} from '../../GlobleContext'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import {Link} from 'react-router-dom'
+
 
 
 
@@ -31,7 +33,9 @@ function LoginBox()  {
         </div>
           <div className="users-container">
           {users.map(accounts =>(
-            <UserBadge key={accounts.id} image={SampleDP} name={accounts.name} id={accounts.id} /> 
+            <Link to='/dashboard' style={{textDecoration: 'none'}}>
+              <UserBadge key={accounts.id} image={SampleDP} name={accounts.name} id={accounts.id} /> 
+            </Link>
           ))}
           
           

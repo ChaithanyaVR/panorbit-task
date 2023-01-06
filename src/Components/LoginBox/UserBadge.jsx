@@ -6,17 +6,17 @@ import {UsersContext} from '../../GlobleContext'
 
 function UserBadge({image,name,id}) {
 
-  // const {setLoggedInUser, loggedInUser} = useContext(UsersContext)
+  const {loginUser, loggedInUser, usersData} = useContext(UsersContext)
  
   console.log('UserBadge')
 
 
   const setUser = ()=> {
-   
-    console.log('Setting User...')
+      console.log('Setting User...')
+      loginUser(id)
+   }
 
-
-  }
+  
   return (
     <>
        <div className='user-badge' id={id} onClick={setUser} >
@@ -24,7 +24,6 @@ function UserBadge({image,name,id}) {
             <img src={image} alt="person1img" />
           </div>
           <div className='person-name'>{name}</div>
-
         </div>
     </>
   )

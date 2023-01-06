@@ -4,14 +4,16 @@ export const UsersContext = createContext({});
 
 
 export const UsersContextProvider = ({children}) => {
+
+
     const[usersData, setUsersData] = useState([]);
-    const[loggedInUser, setLoggedInUser] = useState();
+    const[loggedInUser, setLoggedInUser] = useState(null);
     console.log('Code Start')
 
-      useEffect(() => {
-            fetchUsers()
-            },[])
 
+    //Fetch Logic
+    useEffect(() => { fetchUsers() },[])
+  
     const fetchUsers = async() => {
     await axios.get('https://panorbit.in/api/users.json')
       .then(res => {
@@ -23,22 +25,47 @@ export const UsersContextProvider = ({children}) => {
       })
      }
 
- 
+    
+    //Set Login User Logic
 
-    const [value, setValue] = useState({usersData,loggedInUser,setLoggedInUser})  
+    const loginUser = (id) => {
+      const user = usersData.filter(user => {
+        return user.id === id
+      })
+
+      
+      setLoggedInUser(user[0])
+      
+    }
+
+    //Set Log Out Logic
+    const logoutUser = () =>{
+      setLoggedInUser(null)
+    }
+
+    
+
+     
+    //Combining all Data and Methods
+    const [value, setValue] = useState({usersData,loggedInUser,setLoggedInUser,loginUser,logoutUser})  
 
 
     useEffect(()=>{
         console.log('Setting Value')
         console.log('Users Data')
         console.log(usersData)
+        console.log('Logged In User')
+        console.log(loggedInUser ? loggedInUser.name : '')
         setValue (prevState => ({...prevState,
             usersData,
             loggedInUser,
             setLoggedInUser,
+            loginUser,
+            logoutUser
          }))
     },[usersData,loggedInUser])
      
+
 
      return (
         <UsersContext.Provider value={value}>
