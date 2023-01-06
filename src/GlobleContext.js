@@ -35,12 +35,20 @@ export const UsersContextProvider = ({children}) => {
 
       
       setLoggedInUser(user[0])
+      //Store User into Local Storage
+      localStorage.setItem('user', JSON.stringify(user[0]))
       
     }
+
+
+    useEffect(() => {
+      setLoggedInUser(JSON.parse(localStorage.getItem('user')))
+    },[])
 
     //Set Log Out Logic
     const logoutUser = () =>{
       setLoggedInUser(null)
+      localStorage.clear()
     }
 
     
