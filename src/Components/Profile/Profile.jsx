@@ -90,7 +90,10 @@ function Profile() {
                         <h3><span>City : </span> {user.address.city} </h3>
                         <h3><span>Zipcode : </span> {user.address.zipcode} </h3>
                     </div>
+
+                    
                 </div>
+              
             </div>
       </div>
     </div>
