@@ -1,0 +1,7 @@
+.google-maps{
+    padding: .9em;
+    margin-left: 3em;
+}
+.google-maps #iframeId{
+    border-radius: 20px;
+}

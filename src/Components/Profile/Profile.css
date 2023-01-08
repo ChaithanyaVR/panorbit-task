@@ -1,5 +1,6 @@
 .profile-main-container {
     margin-left: 20%;
+    color: #545454;
 }
 
 
@@ -13,45 +14,49 @@
 
 .profile-tiles-container {
     display: flex;
-    font-size: small;
+    font-size: medium;
 }
 
 .profile-tiles-container h3 {
-    padding: .3em;
+    padding: .5em;
+    padding-top: 1em;
 }
 
-/* .profile-left-tile::before{
-    content: '';
-    top: 0;
-    right: 0;
-    height: 500px;
-    width: 100px;
-    z-index: 999;
-    background-color: #E1E1E1; 
-     border-right: 1px solid #E1E1E1; */
-    /* content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 50px;
-    width: 50%;
-    border-left: 1px solid #E1E1E1; */
-    .profile-left-tile{
-        border-right:1px solid #E1E1E1;
-        height: 500px;
-        transform: translateY(10%);
-    }
-    .profile-right-tile{
-        padding: 3em 0.1em;
-    }
+
 
 .profile-left-tile{
-    max-width: 450px;
+    /* border-right:1px solid #E1E1E1; */
+    max-width: 350px;
+    padding: 2em;
+    padding-left: 0;
 }
-.profile-info-box,.profile-company-details-box,.profile-address-details {
+
+.profile-right-tile{
+    padding: 3em 0.1em;
+    position: relative;
+}
+
+.profile-right-tile::before{
+    content: '';
+    position: absolute;
+    background: #E1E1E1;
+    height: calc(100% - 4em);
+    width: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+
+
+
+.profile-info-box{
     text-align: left;
+    font-weight: bolder;
+    width: 100%;
+    padding-bottom: .5em;
 }
-.profile-info-box h3 span,.profile-company-details-box h3 span{
+.info-label{
     display: inline-block;
     color: #AAAAAA;
     width: 137px;
@@ -60,10 +65,18 @@
     text-align: right;
 }
 
+.profile-tiles-container td{
+    padding-bottom: .5em;
+    font-size: large;
+}
+
 .company-heading,.profile-address-details h3 span {
     color: #AAAAAA; 
     font-weight: 200;
 }
+
+
+
 .profile-details{
     display: flex;
     flex-direction: column;
@@ -71,7 +84,7 @@
 
 }
 
-.profile-details::after{
+.border-bottom::after{
     content: '';
     top: 0;
     height: 1px;
@@ -81,11 +94,11 @@
 
 .profile-dp-container {
     display: block;
-    width: 150px;
+    width: 170px;
     aspect-ratio: 1;
     border-radius: 50%;
     overflow: hidden;
-    margin: 1.5em;
+    /* margin: 1em; */
 }
 .profile-dp-container img{
     width: 100%;
@@ -94,6 +107,11 @@
     object-fit: cover;
 
 }
-
+.profile-address-details{
+    text-align: left;
+    font-weight: bolder;
+    width: 100%;
+    padding-bottom: 0.5em;
+}
 
 

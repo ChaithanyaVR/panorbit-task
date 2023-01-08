@@ -1,0 +1,9 @@
+.navigation{
+    position: fixed;
+    top:20px;
+    left: 20px;
+    bottom: 20px;
+    width: 200px;
+    background:#4152C8;
+    border-radius: 20px;
+}

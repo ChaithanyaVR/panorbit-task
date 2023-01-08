@@ -8,7 +8,7 @@ function UserBadge({image,name,id}) {
 
   const {loginUser, loggedInUser, usersData} = useContext(UsersContext)
  
-  console.log('UserBadge')
+  // console.log('UserBadge')
 
 
   const setUser = ()=> {

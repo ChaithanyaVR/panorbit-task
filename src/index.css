@@ -2,6 +2,9 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
+  /* Debugging Code */
+  /* background-color: rgba(115, 203, 115, 0.154); */
 }
 
 body {

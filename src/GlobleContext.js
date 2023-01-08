@@ -17,11 +17,13 @@ export const UsersContextProvider = ({children}) => {
     const fetchUsers = async() => {
     await axios.get('https://panorbit.in/api/users.json')
       .then(res => {
+        console.log('Fetching...')
         console.log(res.data)
         setUsersData(res.data.users)
       })
       .catch(err => {
         console.log(err)
+
       })
      }
 

@@ -6,7 +6,8 @@ import React ,{useEffect} from 'react';
 import { UsersContextProvider } from './GlobleContext'
 
 function App() {
-  console.log("Start")
+  console.log("----------------")
+  console.log("Start App")
 
 
   return (

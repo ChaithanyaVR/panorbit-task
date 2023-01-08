@@ -7,6 +7,7 @@ import { UsersContext } from '../../GlobleContext'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import LoggedInUserBadge from './LoggedInUserBadge'
+import GoogleMap from '../GoogleMapIntegration/GoogleMap'
 
 
 
@@ -35,8 +36,8 @@ function Profile() {
         }}
 
 })
-  console.log('Profile: ')
-  console.log(user)
+  // console.log('Profile: ')
+  // console.log(user)
 
 
 
@@ -57,26 +58,57 @@ function Profile() {
 
       <div className="profile-tiles-container">
         <div className="profile-left-tile">
-            <div className="profile-details">
+            <div className="profile-details border-bottom">
 
                 <div className="profile-dp-container">
                     <img src={SampleDP} alt="ProfileDP" />
                 </div>
                 <h3>{user !== null ? user.name : 'No user'}</h3>
                 <div className="profile-info-box">
-                    <h3><span>Username : </span> {user.username} </h3>
-                    <h3><span>e-mail : </span> {user.email} </h3>
-                    <h3><span>Phone : </span> {user.phone} </h3>
-                    <h3><span>Website : </span> {user.website} </h3>
+                <table >
+                  <tbody>
+                    <tr>
+                      <td className='info-label'>Username : </td>
+                      <td>{user.username}</td>
+                    </tr>
+                    <tr>
+                      <td className='info-label'>e-mail : </td>
+                      <td>{user.email}</td>
+                    </tr>
+                    <tr>
+                      <td className='info-label'>Phone : </td>
+                      <td>{user.phone}</td>
+                    </tr>
+                    <tr>
+                    <td className='info-label'>Website : </td>
+                    <td>{user.website} </td>
+                    </tr>
+                  </tbody>
+                </table>  
                 </div>
             </div>
 
-            <div className="profile-company-details">
+            <div className="profile-details">
                 <h3 className='company-heading'>Company</h3>
-                <div className="profile-company-details-box">
-                    <h3><span>Name : </span> {user.company.name} </h3>
-                    <h3><span>Catch Phrase: </span> {user.company.catchPhrase} </h3>
-                    <h3><span>Bs : </span> {user.company.bs} </h3>
+                <div className="profile-info-box">
+                    
+
+                <table >
+                  <tbody>
+                    <tr>
+                      <td className='info-label'>Name : </td>
+                      <td>{user.company.name}</td>
+                    </tr>
+                    <tr>
+                      <td className='info-label'>Catch Phrase : </td>
+                      <td> {user.company.catchPhrase} </td>
+                    </tr>
+                    <tr>
+                      <td className='info-label'>Bs : </td>
+                      <td>{user.company.bs}</td>
+                    </tr>
+                  </tbody>
+                </table>  
                 </div>
 
             </div>
@@ -85,15 +117,32 @@ function Profile() {
                 <div className="profile-address-details">
                     <h3><span>Address : </span></h3>
                     <div className="profile-company-details-box">
-                        <h3><span>Street : </span> {user.address.street} </h3>
-                        <h3><span>Suite: </span> {user.address.suite} </h3>
-                        <h3><span>City : </span> {user.address.city} </h3>
-                        <h3><span>Zipcode : </span> {user.address.zipcode} </h3>
+
+                    <table >
+                  <tbody>
+                    <tr>
+                      <td className='info-label'>Street : </td>
+                      <td>{user.address.street}</td>
+                    </tr>
+                    <tr>
+                      <td className='info-label'>Suite : </td>
+                      <td> {user.address.suite} </td>
+                    </tr>
+                    <tr>
+                      <td className='info-label'>City : </td>
+                      <td>{user.address.city}</td>
+                    </tr>
+                    <tr>
+                      <td className='info-label'>Zipcode : </td>
+                      <td>{user.address.zipcode}</td>
+                    </tr>
+                  </tbody>
+                </table>  
+
                     </div>
 
-                    
+                    <GoogleMap latitude={user.address.geo.lat} longitude={user.address.geo.lng} />
                 </div>
-              
             </div>
       </div>
     </div>
