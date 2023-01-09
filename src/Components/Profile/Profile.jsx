@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import LoggedInUserBadge from './LoggedInUserBadge'
 import GoogleMap from '../GoogleMapIntegration/GoogleMap'
 import SwitchProfileBox from '../SwitchProfileBox/SwitchProfileBox'
+import Header from '../Header/Header'
 
 
 
@@ -53,11 +54,8 @@ function Profile() {
   return (
     <>  
     <div className="profile-main-container">
-      <div className='profile-header'>
-        <h3>Profile</h3>
-        <LoggedInUserBadge image={user.profilepicture} name={user !== null ? user.name : 'No user'} />
-        <SwitchProfileBox image={user.profilepicture} name={user.name} email={user.email}/>
-      </div>
+
+     
 
       <div className="profile-tiles-container">
         <div className="profile-left-tile">

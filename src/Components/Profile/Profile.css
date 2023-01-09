@@ -1,16 +1,9 @@
 .profile-main-container {
-    margin-left: 20%;
+    width: 100%; 
     color: #545454;
 }
 
 
-.profile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #E1E1E1;
-    position: relative;
-}
 
 
 .profile-tiles-container {
@@ -33,7 +26,7 @@
 }
 
 .profile-right-tile{
-    padding: 3em 0.1em;
+    padding: 1em 2em;
     position: relative;
 }
 

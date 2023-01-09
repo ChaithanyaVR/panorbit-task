@@ -1,6 +1,10 @@
 .dashboard-main-container {
     padding: 2em;
     height: 100vh;
+    display: flex;
 }
 
+.dashboard-display{
+    width: 100%;
+}
 

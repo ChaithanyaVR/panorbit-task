@@ -1,9 +1,32 @@
 .navigation{
-    position: fixed;
-    top:20px;
-    left: 20px;
-    bottom: 20px;
-    width: 200px;
-    background:#4152C8;
+    min-width: 240px;
+    height: 100vh;
+    margin-right: 2em;
+    background:#5C3CC8;
+    background: linear-gradient(0deg, rgba(121,48,192,1) -50%, rgba(65,83,197,1) 60%);
     border-radius: 20px;
+    box-sizing: initial;
+    transition: width 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align:left;
 }
+
+.nav-links {
+    color: #a6a5e5;
+    border-top: 0.5px solid #a6a5e5;
+    width: 70%;
+    padding: 0.7em;
+    padding-left: 0;
+    text-decoration: none;
+}
+.no-border-top{
+    border-top: 0;
+}
+
+.active-link {
+    color: white;
+}
+
