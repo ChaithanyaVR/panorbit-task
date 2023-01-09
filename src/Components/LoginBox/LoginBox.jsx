@@ -1,7 +1,7 @@
 import React from 'react'
 import './LoginBox.css'
 import UserBadge from './UserBadge'
-import SampleDP from '../images/download.jpeg'
+import SampleDP from '../images/1.jpeg'
 import {useContext} from 'react'
 import {UsersContext} from '../../GlobleContext'
 import { useState } from 'react'
@@ -34,7 +34,7 @@ function LoginBox()  {
           <div className="users-container">
           {users.map(accounts =>(
             <Link to='/dashboard' style={{textDecoration: 'none'}}>
-              <UserBadge key={accounts.id} image={SampleDP} name={accounts.name} id={accounts.id} /> 
+              <UserBadge key={accounts.id} image={accounts.profilepicture} name={accounts.name} id={accounts.id} /> 
             </Link>
           ))}
           

@@ -15,7 +15,8 @@ function UserBadge({image,name,id}) {
       console.log('Setting User...')
       loginUser(id)
    }
-
+  
+  
   
   return (
     <>

@@ -2,13 +2,55 @@ import './LoggedInUserBadge.css'
 import React from 'react'
 
 
-function LoggedInUserBadge({image, name}) {
+function LoggedInUserBadge({image, name, isOnline}) {
+
+  let onlineStatus
+
+  if (isOnline !== undefined) {
+
+    if (isOnline === true) {
+      onlineStatus = <span>●</span>
+    }else{
+      onlineStatus = <span>○</span>
+    }
+  } 
+
+  function openPopup() {
+    const popup = document.getElementById('popup-box')
+    console.log(popup.style.display)
+    switch(popup.style.display) {
+      case 'none':
+        popup.style.display = 'flex'
+        break;
+      case 'flex':
+        popup.style.display = 'none'
+        break;
+      default:
+        popup.style.display = 'none'            
+    }
+
+
+    console.log(popup.style.display)
+  }
+      //Close the Box if clicked outside
+      document.addEventListener('mouseup', function(e) {
+        var popup = document.getElementById('popup-box');
+        var badge = document.getElementById('logged-user-badge')
+        
+        if(!badge.contains(e.target)) {
+          if(!popup.contains(e.target)) {
+            popup.style.display = 'none'
+          }
+        }
+  
+    });
+
   return (
-    <div className='logged-user-badge' >
+    <div className='logged-user-badge' onClick={openPopup} id='logged-user-badge'>
           <div className='logged-person-image'>
             <img src={image} alt="person1img" />
           </div>
-          <div className='logged-person-name'>{name}</div>
+          <div className='logged-person-name'>{name} {onlineStatus}</div>
         </div>
   )
 }

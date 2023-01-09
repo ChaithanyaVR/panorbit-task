@@ -4,6 +4,8 @@
     align-items: center;
     border-bottom: 1px solid #E1E1E1;
     color:black;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .person-image{

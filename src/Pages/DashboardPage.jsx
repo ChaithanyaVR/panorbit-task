@@ -10,6 +10,8 @@ function DashboardPage() {
   const {loggedInUser,logoutUser} = useContext(UsersContext)
 
   useEffect(() => {
+
+    //Run Logout User on Unmount
     return () => {
       logoutUser()
     }

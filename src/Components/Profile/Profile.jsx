@@ -1,13 +1,14 @@
 import React from 'react'
 import UserBadge from '../LoginBox/UserBadge'
 import './Profile.css'
-import SampleDP from '../images/download.jpeg'
+import SampleDP from '../images/1.jpeg'
 import { useContext } from 'react'
 import { UsersContext } from '../../GlobleContext'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import LoggedInUserBadge from './LoggedInUserBadge'
 import GoogleMap from '../GoogleMapIntegration/GoogleMap'
+import SwitchProfileBox from '../SwitchProfileBox/SwitchProfileBox'
 
 
 
@@ -18,6 +19,7 @@ function Profile() {
     name: '',
     username: '',
     email: '',
+    profilepicture: '',
     phone: '',
     website: '',
     company: {
@@ -53,7 +55,8 @@ function Profile() {
     <div className="profile-main-container">
       <div className='profile-header'>
         <h3>Profile</h3>
-        <LoggedInUserBadge image={SampleDP} name={user !== null ? user.name : 'No user'}/>
+        <LoggedInUserBadge image={user.profilepicture} name={user !== null ? user.name : 'No user'} />
+        <SwitchProfileBox image={user.profilepicture} name={user.name} email={user.email}/>
       </div>
 
       <div className="profile-tiles-container">
@@ -61,7 +64,7 @@ function Profile() {
             <div className="profile-details border-bottom">
 
                 <div className="profile-dp-container">
-                    <img src={SampleDP} alt="ProfileDP" />
+                    <img src={user.profilepicture} alt="ProfileDP" />
                 </div>
                 <h3>{user !== null ? user.name : 'No user'}</h3>
                 <div className="profile-info-box">
@@ -141,11 +144,14 @@ function Profile() {
 
                     </div>
 
-                    <GoogleMap latitude={user.address.geo.lat} longitude={user.address.geo.lng} />
+                    <GoogleMap 
+                    latitude={user.address.geo.lat} 
+                    longitude={user.address.geo.lng} />
                 </div>
             </div>
       </div>
     </div>
+   
     </>
   )
 }

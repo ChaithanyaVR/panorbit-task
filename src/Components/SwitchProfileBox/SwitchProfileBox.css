@@ -1,0 +1,59 @@
+.popup-box{
+    position: absolute;
+    width:300px;
+    aspect-ratio: 1/1.2;
+    background-color: white;
+    top:0;
+    right: 7px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    margin-top: 40px;
+    padding:2em;
+    font-weight: 200;
+    font-size: small;
+    border-radius: 25px;
+    z-index: 9999;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.popup-box h4{
+    font-weight: 100;
+    font-size: medium;
+    padding: .4em;
+}
+.logged-person-image{
+    align-self:center;
+}
+
+.popup-dp{
+    width:95px;
+}
+.profile-info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.profile-list{
+    margin-bottom: 1em;
+    overflow-y: scroll;
+}
+.button{
+    background-color: #D55151;
+    border: none;
+    color: white;
+    width:6em;
+    padding: .3em;
+    display: flex;
+    text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 17px;
+     border-radius: 25px;
+     cursor: pointer;
+     font-weight: 900;
+
+}

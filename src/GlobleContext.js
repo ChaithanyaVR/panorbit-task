@@ -1,11 +1,16 @@
 import React, {createContext,useState, useEffect} from "react";
 import axios from "axios";
+import * as Images from './Components/images'
+
+
+//Creating a Context
 export const UsersContext = createContext({});
 
 
+//Creating Context Provider Component
 export const UsersContextProvider = ({children}) => {
-
-
+    
+    const userImages = Images
     const[usersData, setUsersData] = useState([]);
     const[loggedInUser, setLoggedInUser] = useState(null);
     console.log('Code Start')
@@ -28,6 +33,25 @@ export const UsersContextProvider = ({children}) => {
      }
 
     
+    //Setting Images for Users
+    useEffect(() => {
+      let temp = usersData  
+      console.log('Temp Users Object:')
+      let i = 1
+      for (let user in temp) {
+        // console.log(temp[user].profilepicture)
+        temp[user].profilepicture = eval(`userImages._${i}`)
+        // console.log(temp[user].profilepicture) 
+        i++
+      }
+      setUsersData(temp)
+
+      // console.log(usersData)
+    },[usersData]) 
+
+
+    
+
     //Set Login User Logic
 
     const loginUser = (id) => {
@@ -66,13 +90,13 @@ export const UsersContextProvider = ({children}) => {
         console.log(usersData)
         console.log('Logged In User')
         console.log(loggedInUser ? loggedInUser.name : '')
-        setValue (prevState => ({...prevState,
+        setValue ({
             usersData,
             loggedInUser,
             setLoggedInUser,
             loginUser,
             logoutUser
-         }))
+         })
     },[usersData,loggedInUser])
      
 

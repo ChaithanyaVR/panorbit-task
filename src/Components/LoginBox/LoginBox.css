@@ -23,5 +23,5 @@
   overflow-y: scroll;
   margin-bottom: 1.5em;
   padding:0 2em;
-
+  scroll-snap-type: mandatory;
 }
