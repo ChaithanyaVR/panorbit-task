@@ -9,6 +9,7 @@ import { UsersContext } from '../GlobleContext'
 import './DashboardPage.css'
 import { Routes, Route, Outlet} from 'react-router-dom';
 import { useState } from 'react'
+import ChatBox from '../Components/ChatBox/ChatBox'
 
 
 function DashboardPage() {
@@ -37,6 +38,7 @@ function DashboardPage() {
     <>
       <div className="dashboard-main-container">
       <SideNavbar/>
+      <ChatBox/>
       <div className="dashboard-display">
       <Header title={headerTitle}/>
       <Outlet context={{handleHeaderTitle}}/>

@@ -2,16 +2,16 @@ import './LoggedInUserBadge.css'
 import React from 'react'
 
 
-function LoggedInUserBadge({image, name, isOnline}) {
+function LoggedInUserBadge({image, name, isOnline, enableOpenPopup}) {
 
   let onlineStatus
 
   if (isOnline !== undefined) {
 
     if (isOnline === true) {
-      onlineStatus = <span>●</span>
+      onlineStatus = <span style={{color: '#1cad62'}}>●</span>
     }else{
-      onlineStatus = <span>○</span>
+      onlineStatus = <span  style={{color: '#d4d4d4'}}>●</span>
     }
   } 
 
@@ -46,7 +46,7 @@ function LoggedInUserBadge({image, name, isOnline}) {
     });
 
   return (
-    <div className='logged-user-badge' onClick={openPopup} id='logged-user-badge'>
+    <div className='logged-user-badge' onClick={enableOpenPopup ? openPopup : ''} id='logged-user-badge'>
           <div className='logged-person-image'>
             <img src={image} alt="person1img" />
           </div>

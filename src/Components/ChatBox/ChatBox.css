@@ -1,0 +1,39 @@
+.chats-container{
+    position: fixed;
+    bottom: 0;
+    right: 1.6em;
+    z-index: 999999;
+    border: 1px solid  #2c65c8;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    max-width: 240px;
+    min-width: 220px;
+}
+
+.chats-header{
+    background-color: #2c65c8;
+    /* width: 215px; */
+    align-items: center;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    
+}
+
+.chats-list-container {
+    background-color: white;
+    max-height: 250px;
+    overflow-y: scroll;
+    display: none;
+}
+
+.chats-list-container .logged-person-name {
+    font-size: small;
+    overflow: hidden;
+}
+
+.open-btn{
+    line-height: 0;
+    cursor: pointer;
+}

@@ -33,7 +33,7 @@
     top: 187px;
     right: 0;
     opacity: 0;
-    transition: opacity .2s ease-in .2s,top .2s ease-in-out ;
+    transition: opacity .2s ease-in .5s,top .2s ease-in-out ;
 }
 
 .indicator{

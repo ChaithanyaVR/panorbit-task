@@ -28,7 +28,7 @@ function Header({title}) {
   return (
     <div className='profile-header'>
         <h3>{title}</h3>
-        <LoggedInUserBadge image={user.profilepicture} name={user.name} />
+        <LoggedInUserBadge image={user.profilepicture} name={user.name} enableOpenPopup/>
         <SwitchProfileBox image={user.profilepicture} name={user.name} email={user.email}/>
       </div>
   )
