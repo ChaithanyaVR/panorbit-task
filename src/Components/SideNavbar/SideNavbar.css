@@ -1,6 +1,7 @@
 .navigation{
+    position: fixed;
     min-width: 240px;
-    height: 100vh;
+    height: 90vh;
     margin-right: 2em;
     background:#5C3CC8;
     background: linear-gradient(0deg, rgba(121,48,192,1) -50%, rgba(65,83,197,1) 60%);
@@ -15,6 +16,7 @@
 }
 
 .nav-links {
+    position: relative;
     color: #a6a5e5;
     border-top: 0.5px solid #a6a5e5;
     width: 70%;
@@ -26,7 +28,57 @@
     border-top: 0;
 }
 
-.active-link {
+.indicator-container {
+    position: absolute;
+    top: 187px;
+    right: 0;
+    opacity: 0;
+    transition: opacity .2s ease-in .2s,top .2s ease-in-out ;
+}
+
+.indicator{
+    position: relative;
+    width: 33px;
+    aspect-ratio: 1;
+    background-color: white;
+    
+    display: flex;
+    justify-content: center;
+    
+    font-weight: bold;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    align-items: center;
+   
+    
+}
+
+
+.indicator::before, .indicator::after {
+    content: '';
+    width: 20px;
+    aspect-ratio: 1;
+    background-color: transparent;
+    /* background-color: red; */
+   
+    position: absolute;
+    right: 0;
+}
+
+.indicator::before{
+    top: -20px;
+    border-bottom-right-radius: 50%;
+    box-shadow: 5px 5px white;
+}
+.indicator::after {
+    bottom: -20px;
+    box-shadow: 5px -5px white;
+    border-top-right-radius: 50%;
+}
+
+.active {
     color: white;
 }
+
+
 

@@ -1,27 +1,57 @@
 
+import { useState } from 'react'
+import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import './SideNavbar.css'
 
 
 function SideNavbar() {
 
-  const activeLinkStyle = ({isActive}) => {
-    return {
-      color: isActive ? 'white' : '',
-    }
-  }
+  console.log('SideNavbar----------------')
+
+
+  const [offsetState, setOffsetState] = useState()
+  const [currentLink, setCurrentLink] = useState({offsetTop: ''})
+ 
+
+  // To Delay the appearance of the NavBar Indicator
+  window.onload= function(event) {
+    console.log('Page Refreshed ...............');
+    const indicator = document.getElementById('indicator')
+    indicator.style.opacity = '1'
+  };
+  
+  //To set the indicator's postition to the active link
+  useEffect(() => {
+    setCurrentLink(document.querySelector('.active'))
+    const indicator = document.getElementById('indicator')
+    console.log(currentLink)
+    indicator.style.top = `${currentLink.offsetTop + 7}px`
+    
+  })
 
   return (
     <>
-    <div className='navigation'>
-      <NavLink to="/dashboard" end style={activeLinkStyle} className='nav-links no-border-top' >Profile</NavLink>
-      <NavLink to="/dashboard/posts" exact  style={activeLinkStyle} className='nav-links'>Posts</NavLink>
-      <NavLink to="/dashboard/gallery" style={activeLinkStyle} className='nav-links'>Gallery</NavLink>
-      <NavLink to="/dashboard/todo" style={activeLinkStyle} className='nav-links'>ToDo</NavLink>
+    <div className='navigation' >
+      <NavLink to="/dashboard" end className={link =>  "nav-links no-border-top"+ (link.isActive ? " active" : '')}   >Profile</NavLink>
+      <NavLink to="/dashboard/posts"  className={link =>  "nav-links"+ (link.isActive ? " active": '')} >Posts</NavLink>
+      <NavLink to="/dashboard/gallery" className={link => "nav-links"+ (link.isActive ? " active" : '')} >Gallery</NavLink>
+      <NavLink to="/dashboard/todo" className={link =>  "nav-links"+ (link.isActive ? " active" : '')} >ToDo</NavLink>
+     <div className="indicator-container" id='indicator'>
+
+      <span className='indicator'>
+
+        <div className="arrow">
+          ⌲
+        </div>
+      </span>
+     </div>
     </div>
       
     </>
   )
 }
+
+
 
 export default SideNavbar

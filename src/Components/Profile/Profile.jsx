@@ -10,11 +10,13 @@ import LoggedInUserBadge from './LoggedInUserBadge'
 import GoogleMap from '../GoogleMapIntegration/GoogleMap'
 import SwitchProfileBox from '../SwitchProfileBox/SwitchProfileBox'
 import Header from '../Header/Header'
+import { useOutletContext } from 'react-router-dom'
 
 
 
 function Profile() {
   const {loggedInUser} = useContext(UsersContext)
+  const {handleHeaderTitle}= useOutletContext()
   
   const [user,setUser] = useState({
     name: '',
@@ -49,6 +51,7 @@ function Profile() {
 
         setUser(loggedInUser)
     }
+    handleHeaderTitle('Profile')
   },[loggedInUser])
     
   return (

@@ -6,7 +6,7 @@ import { useState } from 'react'
 import LoggedInUserBadge from '../Profile/LoggedInUserBadge'
 import SwitchProfileBox from '../SwitchProfileBox/SwitchProfileBox'
 import './Header.css'
-function Header() {
+function Header({title}) {
 
     const {loggedInUser} = useContext(UsersContext)
   
@@ -27,7 +27,7 @@ function Header() {
 
   return (
     <div className='profile-header'>
-        <h3>Profile</h3>
+        <h3>{title}</h3>
         <LoggedInUserBadge image={user.profilepicture} name={user.name} />
         <SwitchProfileBox image={user.profilepicture} name={user.name} email={user.email}/>
       </div>

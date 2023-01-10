@@ -32,7 +32,7 @@ function SwitchProfileBox({image,name,email}) {
                <span>{email}</span> 
                 </div>
                 <div className="profile-list"> {users.map(accounts =>(
-            <Link to='/dashboard' style={{textDecoration: 'none'}}>
+            <Link to='/dashboard' style={{textDecoration: 'none'}} key={accounts.id}>
               <UserBadge key={accounts.id} image={accounts.profilepicture} name={accounts.name} id={accounts.id} /> 
             </Link>
           ))}</div>

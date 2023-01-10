@@ -8,6 +8,7 @@ import SideNavbar from '../Components/SideNavbar/SideNavbar'
 import { UsersContext } from '../GlobleContext'
 import './DashboardPage.css'
 import { Routes, Route, Outlet} from 'react-router-dom';
+import { useState } from 'react'
 
 
 function DashboardPage() {
@@ -22,14 +23,23 @@ function DashboardPage() {
     }
   },[])
 
+
+  //For Header Title
+  const [headerTitle,setHeaderTitle] = useState()
+
+  const handleHeaderTitle = (title) => {
+    setHeaderTitle(title)
+  }
+
+
   return (
 
     <>
       <div className="dashboard-main-container">
       <SideNavbar/>
       <div className="dashboard-display">
-      <Header/>
-        <Outlet/>
+      <Header title={headerTitle}/>
+      <Outlet context={{handleHeaderTitle}}/>
       </div>
         
       </div>
