@@ -35,16 +35,16 @@ export const UsersContextProvider = ({children}) => {
     
     //Setting Images for Users
     useEffect(() => {
-      let temp = usersData  
+      let tempUsers = usersData  
       console.log('Temp Users Object:')
       let i = 1
-      for (let user in temp) {
+      for (let user in tempUsers) {
         // console.log(temp[user].profilepicture)
-        temp[user].profilepicture = eval(`userImages._${i}`)
+        tempUsers[user].profilepicture = eval(`userImages._${i}`)
         // console.log(temp[user].profilepicture) 
         i++
       }
-      setUsersData(temp)
+      setUsersData(tempUsers)
 
       // console.log(usersData)
     },[usersData]) 
@@ -66,7 +66,7 @@ export const UsersContextProvider = ({children}) => {
       
     }
 
-
+    //Latching User stored in Local Storage to LoggedInUser State
     useEffect(() => {
       setLoggedInUser(JSON.parse(localStorage.getItem('user')))
     },[])
@@ -90,6 +90,8 @@ export const UsersContextProvider = ({children}) => {
         console.log(usersData)
         console.log('Logged In User')
         console.log(loggedInUser ? loggedInUser.name : '')
+
+
         setValue ({
             usersData,
             loggedInUser,
@@ -97,6 +99,8 @@ export const UsersContextProvider = ({children}) => {
             loginUser,
             logoutUser
          })
+
+         
     },[usersData,loggedInUser])
      
 

@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import {AiOutlineRight} from 'react-icons/ai'
 import './SideNavbar.css'
 
 
@@ -21,24 +22,17 @@ useEffect(() => {
     indicator.style.opacity = '1'
   };
 
-  const [offsetState, setOffsetState] = useState()
+  
   const [currentLink, setCurrentLink] = useState({offsetTop: ''})
 
 
-  
-
-
-  function initIndicator() {
-    const indicator = document.getElementById('indicator')
-    indicator.style.opacity = '1' 
-  }
   
   //To set the indicator's postition to the active link
   useEffect(() => {
     setCurrentLink(document.querySelector('.active'))
     const indicator = document.getElementById('indicator')
-    console.log(currentLink)
-    indicator.style.top = `${currentLink.offsetTop + 7}px`
+    console.log(currentLink.offsetTop)
+    indicator.style.top= `${currentLink.offsetTop + 7}px`
     
   })
 
@@ -54,7 +48,7 @@ useEffect(() => {
       <span className='indicator' >
 
         <div className="arrow">
-          ⌲
+        <AiOutlineRight/>
         </div>
       </span>
      </div>

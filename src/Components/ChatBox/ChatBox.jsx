@@ -23,8 +23,7 @@ function ChatBox() {
 
   function toggle() {
     const box = document.getElementById('chats-list')
-    const arrow = document.getElementById('arrow')
-    if (box.style.display == 'none') {
+    if (box.style.display === 'none') {
 
       box.style.display = 'block'
       setIsOpen(true)

@@ -25,7 +25,6 @@ function App() {
             <Routes>
               <Route path='/' exact element={<LoginPage/>} />
               <Route path='dashboard' element={<DashboardPage />} >
-               
                 <Route path='posts' element={<Posts/>}/>
                 <Route path='gallery' element={<Gallery/>}/>
                 <Route path='todo' element={<ToDo/>}/>

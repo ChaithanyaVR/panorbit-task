@@ -79,6 +79,9 @@
 .active {
     color: white;
 }
+.arrow{
+    line-height: 0;
+}
 
 
 

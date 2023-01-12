@@ -6,7 +6,7 @@ import {UsersContext} from '../../GlobleContext'
 
 function UserBadge({image,name,id}) {
 
-  const {loginUser, loggedInUser, usersData} = useContext(UsersContext)
+  const {loginUser} = useContext(UsersContext)
  
   // console.log('UserBadge')
 
